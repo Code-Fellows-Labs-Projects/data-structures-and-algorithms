@@ -16,7 +16,6 @@ const addOne = (arr) => {
   });
 
   return newArray;
-
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -54,7 +53,6 @@ const allUpperCase = (arr) => {
   });
 
   return upperCaseArray;
-
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -71,7 +69,6 @@ const greeting = (word) => {
   let newGreeting = '';
   newGreeting = word.toUpperCase() + '!';
   return newGreeting;
-
 };
 
 const speaker = (words, callback) => {
@@ -82,9 +79,7 @@ const speaker = (words, callback) => {
   });
 
   return newSpeaker;
-
 };
-
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5
@@ -108,14 +103,15 @@ const addValues = (arr, value) => {
 };
 
 const addNumbers = (num, arr, times, callback) => {
-  const modifiedArray = [];
 
   for (let i=0; i<times; i++){
     callback(arr,num);
-  }
 
-  return modifiedArray;
+  }
+  return arr;
 };
+
+
 
 /* ------------------------------------------------------------------------------------------------
 
@@ -136,7 +132,17 @@ This function should use forEach to populate your grocery list based on the stor
 ------------------------------------------------------------------------------------------------ */
 
 const createList = (availableItems) => {
-  // Solution code here...
+  const newList = [];
+
+  availableItems.forEach(item => {
+
+    if (item.available) {
+      newList.push(item.name);
+    }
+
+  });
+
+  return newList;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -154,7 +160,30 @@ Return the resulting output array.
 ------------------------------------------------------------------------------------------------ */
 
 const fizzbuzz = (arr) => {
-  // Solution code here...
+
+  const newArray = [];
+
+  arr.forEach(number => {
+
+    if ((number % 5 === 0) && (number % 3 === 0)) {
+      newArray.push('Fizz Buzz');
+    }
+
+    else if (number % 3 === 0) {
+      newArray.push('Fizz');
+    }
+
+    else if (number % 5 === 0) {
+      newArray.push('Buzz');
+    }
+
+    else {
+      newArray.push(number);
+    }
+
+  });
+
+  return newArray;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -208,7 +237,7 @@ describe('Testing challenge 6', () => {
   });
 });
 
-xdescribe('Testing challenge 7', () => {
+describe('Testing challenge 7', () => {
   const inputs = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16];
 
   test('It should print out messages or numbers', () => {
