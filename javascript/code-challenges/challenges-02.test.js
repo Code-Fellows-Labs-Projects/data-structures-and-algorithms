@@ -25,7 +25,7 @@ Write a function named addOne that, given an array of numbers, uses map to retur
 ------------------------------------------------------------------------------------------------ */
 
 const addOne = (arr) => {
-  let addOneArray = arr.map( number => number + 1);
+  let addOneArray = arr.map(number => number + 1);
   return addOneArray;
 };
 
@@ -36,7 +36,7 @@ Write a function named addQuestion that, given an array of strings, uses map to 
 ------------------------------------------------------------------------------------------------ */
 
 const addQuestion = (arr) => {
-  let newStringArray = arr.map( string => `${string}?`);
+  let newStringArray = arr.map(string => `${string}?`);
   return newStringArray;
 };
 
@@ -51,7 +51,13 @@ For example, twoToThe([1,2,3]) returns [2,4,8] because 2 ^ 1 = 2, 2 ^ 2 = 4, and
 ------------------------------------------------------------------------------------------------ */
 
 const forLoopTwoToThe = (arr) => {
-  // Solution code here...
+  const newArray = [];
+
+  for (let i = 0; i < arr.length; i++) {
+    newArray.push(Math.pow(2, arr[i]));
+  }
+
+  return newArray;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -61,7 +67,13 @@ Write a function named forEachTwoToThe that produces the same output as your for
 ------------------------------------------------------------------------------------------------ */
 
 const forEachTwoToThe = (arr) => {
-  // Solution code here...
+  const newArray = [];
+
+  arr.forEach(number => {
+    newArray.push(Math.pow(2, number));
+  });
+
+  return newArray;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -71,7 +83,8 @@ Write a function named mapTwoToThe that produces the same output as your forLoop
 ------------------------------------------------------------------------------------------------ */
 
 const mapTwoToThe = (arr) => {
-  // Solution code here...
+  let newArray = arr.map(number => Math.pow(2, number));
+  return newArray;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -85,7 +98,10 @@ For example: charCode(['h','i']) returns [104, 105].
 ------------------------------------------------------------------------------------------------ */
 
 const charCode = (arr) => {
-  // Solution code here...
+  // let newcharCode = arr.map((string, index) => {
+  //   string.charCodeAt(index);
+  // });
+  // return newcharCode;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -224,7 +240,7 @@ describe('Testing challenge 3', () => {
   });
 });
 
-xdescribe('Testing challenge 4', () => {
+describe('Testing challenge 4', () => {
   test('It should return two raised to the power of the integer', () => {
     expect(forLoopTwoToThe([0, 4, 5])).toStrictEqual([1, 16, 32]);
     expect(forLoopTwoToThe([0, 4, 5]).length).toStrictEqual(3);
@@ -235,7 +251,7 @@ xdescribe('Testing challenge 4', () => {
   });
 });
 
-xdescribe('Testing challenge 5', () => {
+describe('Testing challenge 5', () => {
   test('It should return two raised to the power of the integer', () => {
     expect(forEachTwoToThe([0, 4, 5])).toStrictEqual([1, 16, 32]);
     expect(forEachTwoToThe([0, 4, 5]).length).toStrictEqual(3);
@@ -246,7 +262,7 @@ xdescribe('Testing challenge 5', () => {
   });
 });
 
-xdescribe('Testing challenge 6', () => {
+describe('Testing challenge 6', () => {
   test('It should return two raised to the power of the integer', () => {
     expect(mapTwoToThe([0, 4, 5])).toStrictEqual([1, 16, 32]);
     expect(mapTwoToThe([0, 4, 5]).length).toStrictEqual(3);
