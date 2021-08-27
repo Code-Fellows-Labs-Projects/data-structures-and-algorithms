@@ -159,7 +159,7 @@ hasChildrenValues(characters, 'Sansa') will return false
     house: 'Stark',
   },
 ------------------------------------------------------------------------------------------------ */
-
+//HEXX KING HELPED ME SOLVE THIS
 const hasChildrenValues = (arr, character) => {
   let children = 0;
   arr.forEach(obj => {
