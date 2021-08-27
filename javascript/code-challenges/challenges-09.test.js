@@ -146,17 +146,32 @@ This function should take in an array of data and a character name and return a 
 For example:
 hasChildrenValues(characters, 'Cersei') will return true
 hasChildrenValues(characters, 'Sansa') will return false
------------------------------------------------------------------------------------------------- */
 
+{
+    name: 'Mace',
+    spouse: 'Alerie',
+    children: ['Margaery', 'Loras'],
+    house: 'Tyrell',
+  },
+  {
+    name: 'Sansa',
+    spouse: 'Tyrion',
+    house: 'Stark',
+  },
+------------------------------------------------------------------------------------------------ */
+//HEXX KING HELPED ME SOLVE THIS
 const hasChildrenValues = (arr, character) => {
-  // Object.values(arr).forEach(character => {
-  //   if (character.children) {
-  //     return true;
-  //   } else {
-  //     return false;
-  //   }
-  // });
-  
+  let children = 0;
+  arr.forEach(obj => {
+    if (obj.name === character) {
+      Object.keys(obj).forEach(key => {
+        if (key === 'children')
+          children = Object.values(obj).length;
+      });
+    }
+  });
+  return children ? true : false;
+};
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 7 - Stretch Goal
@@ -276,7 +291,7 @@ describe('Testing challenge 5', () => {
 });
 
 
-xdescribe('Testing challenge 6', () => {
+describe('Testing challenge 6', () => {
   test('It should return true for characters that have children', () => {
     expect(hasChildrenValues(characters, 'Daenarys')).toBeTruthy();
   });
