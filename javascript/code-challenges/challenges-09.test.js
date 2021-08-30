@@ -166,13 +166,24 @@ const hasChildrenValues = (arr, character) => {
     if (obj.name === character) {
       Object.keys(obj).forEach(key => {
         if (key === 'children')
-          children = Object.values(obj).length;
+          children = Object.values(obj.children).length;
       });
     }
   });
   return children ? true : false;
 };
 
+// const hasChildrenValues = (arr, character) => {
+//   arr.forEach(obj => {
+//     if (obj.name === character) {
+//       if (Object.values(obj)) {
+//         return true;
+//       }
+//     } else {
+//       return false;
+//     }
+//   });
+// };
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 7 - Stretch Goal
 
