@@ -98,10 +98,10 @@ For example: charCode(['h','i']) returns [104, 105].
 ------------------------------------------------------------------------------------------------ */
 
 const charCode = (arr) => {
-  // let newcharCode = arr.map((string, index) => {
-  //   string.charCodeAt(index);
-  // });
-  // return newcharCode;
+  let newcharCode = arr.map(value => {
+    return value.charCodeAt();
+  });
+  return newcharCode;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -273,7 +273,7 @@ describe('Testing challenge 6', () => {
   });
 });
 
-xdescribe('Testing challenge 7', () => {
+describe('Testing challenge 7', () => {
   test('It should return an array containing the character code for each letter', () => {
     expect(charCode(['C', 'o', 'd', 'e', '3', '0', '1'])).toStrictEqual([ 67, 111, 100, 101, 51, 48, 49 ]);
     expect(charCode(['C', 'o', 'd', 'e', '3', '0', '1']).length).toStrictEqual(7);
