@@ -107,7 +107,14 @@ For example, ['Alphabet', 'alphabet', 'carrot', 'Zebra'] is correctly sorted, an
 ------------------------------------------------------------------------------------------------ */
 
 const alphabetizeBetter = (arr) => {
-  // Solution code here...
+  let alphabetizedArray = arr.sort ((a,b) => {
+    let lowerCaseA = a.toLowerCase();
+    let lowerCaseB = b.toLowerCase();
+    if (lowerCaseA < lowerCaseB) { return -1;}
+    if (lowerCaseA > lowerCaseB) { return 1;}
+    return 0;
+  });
+  return alphabetizedArray;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -278,7 +285,7 @@ describe('Testing challenge 6', () => {
   });
 });
 
-xdescribe('Testing challenge 7', () => {
+describe('Testing challenge 7', () => {
   test('It should alphabetize without regard to capitalization', () => {
     expect(alphabetizeBetter(['Alice', 'apple', 'alert', 'Average'])).toStrictEqual([ 'alert', 'Alice', 'apple', 'Average' ]);
     const ans = alphabetizeBetter(['alphabet', 'Zebra', 'Alphabet', 'carrot']);
