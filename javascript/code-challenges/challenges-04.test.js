@@ -124,7 +124,10 @@ Write a function named sortByLength that takes in an array of strings and return
 ------------------------------------------------------------------------------------------------ */
 
 const sortByLength = (arr) => {
-  // Solution code here...
+  let lengthArray = arr.sort ((a,b) => {
+    return a.length - b.length;
+  });
+  return lengthArray;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -136,7 +139,12 @@ For example, [1, 14, 0.2, -281, 54782] is only correctly sorted in that order.
 ------------------------------------------------------------------------------------------------ */
 
 const sortNumbersByLength = (arr) => {
-  // Solution code here...
+  let numberLengthArray = arr.sort((a,b) => {
+    let stringA = a.toString();
+    let stringB = b.toString();
+    return stringA.length - stringB.length;
+  });
+  return numberLengthArray;
 };
 
 /*-----------------------------------------------------------------------------------------------
@@ -158,7 +166,10 @@ const people = [
 ];
 
 const sortPeople = (arr) => {
-  // Solution code here...
+  let lastNameArray = arr.sort((a,b) => {
+    return a.lastName - b.lastName;
+  });
+  return lastNameArray;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -294,7 +305,7 @@ describe('Testing challenge 7', () => {
   });
 });
 
-xdescribe('Testing challenge 8', () => {
+describe('Testing challenge 8', () => {
   test('It should sort strings by length', () => {
     const ans = sortByLength(['alphabet', 'Zebra', 'Alphabet', 'carrot']);
     expect(ans.slice(0,2)).toStrictEqual(['Zebra', 'carrot']);
@@ -305,7 +316,7 @@ xdescribe('Testing challenge 8', () => {
   });
 });
 
-xdescribe('Testing challenge 9', () => {
+describe('Testing challenge 9', () => {
   test('It should sort numbers by their length', () => {
     expect(sortNumbersByLength([10, 2.8, 1, -47.75])).toStrictEqual([1, 10, 2.8, -47.75]);
     expect(sortNumbersByLength([100, 2.82, 1, -47.75])).toStrictEqual([1, 100, 2.82, -47.75]);
