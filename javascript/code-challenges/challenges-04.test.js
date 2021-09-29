@@ -231,8 +231,24 @@ const meetings = [
   new Meeting('Friday', '1200', '1345'),
 ];
 
+// Resource: StackOverflow (https://stackoverflow.com/questions/34066752/sort-object-of-weekdays-like-sunday-monday-saturday)
+const weekDaySorter = {
+  'sunday': 0,
+  'monday': 1,
+  'tuesday': 2,
+  'wednesday': 3,
+  'thursday': 4,
+  'friday': 5,
+  'saturday': 6,
+};
+
 const sortMeetingsByDay = (arr) => {
-  // Solution code here...
+  const meetingArray = arr.sort((a,b) => {
+    const meetingA = a.dayOfWeek.toLowerCase();
+    const meetingB = b.dayOfWeek.toLowerCase();
+    return weekDaySorter[meetingA] - weekDaySorter[meetingB];
+  });
+  return meetingArray;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -380,7 +396,7 @@ describe('Testing challenge 11', () => {
   });
 });
 
-xdescribe('Testing challenge 12', () => {
+describe('Testing challenge 12', () => {
   test('It should sort meetings by the day on which they happen', () => {
     const sortedMeetings = sortMeetingsByDay(meetings);
     expect(sortedMeetings.slice(0, 2)).toEqual(expect.arrayContaining([new Meeting('Monday', '0900', '0945'), new Meeting('Monday', '0900', '1000')]));
