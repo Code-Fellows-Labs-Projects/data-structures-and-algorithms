@@ -193,7 +193,10 @@ const characters = [
 ];
 
 const countNumberOfChildren = (arr) => {
-  // Solution code here...
+  const totalNumberOfChildren = arr.reduce((accumulator, currentCharacter) =>{
+    return currentCharacter.children ? accumulator + currentCharacter.children.length : accumulator;
+  }, 0 );
+  return totalNumberOfChildren;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -340,7 +343,7 @@ describe('Testing challenge 6', () => {
   });
 });
 
-xdescribe('Testing challenge 7', () => {
+describe('Testing challenge 7', () => {
   test('It should return the total number of children', () => {
     expect(countNumberOfChildren(characters)).toStrictEqual(14);
   });
