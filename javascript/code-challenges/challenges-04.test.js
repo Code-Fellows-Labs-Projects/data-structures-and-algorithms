@@ -243,7 +243,7 @@ const weekDaySorter = {
 };
 
 const sortMeetingsByDay = (arr) => {
-  const meetingArray = arr.sort((a,b) => {
+  const meetingArray = arr.sort((a, b) => {
     const meetingA = a.dayOfWeek.toLowerCase();
     const meetingB = b.dayOfWeek.toLowerCase();
     return weekDaySorter[meetingA] - weekDaySorter[meetingB];
@@ -262,18 +262,19 @@ You DO NOT need to use your solution to Challenge 9 in completing Challenge 10.
 ------------------------------------------------------------------------------------------------ */
 
 const sortSchedule = (arr) => {
-  // const sortMeetingsArray = arr.sort ((a,b) => {
-  //   const meetingAStart = parseInt(a.start);
-  //   const meetingAEnd = parseInt(a.end);
-  //   const meetingBStart = parseInt(b.start);
-  //   const meetingBEnd = parseInt(b.end);
-  //   if (meetingAStart !== meetingBStart){
-  //     return meetingAStart - meetingBStart;
-  //   } else if (meetingAStart === meetingBStart){
-  //     return (meetingAEnd - meetingAStart) - (meetingBEnd - meetingBStart);
-  //   }
-  // });
-  // return sortMeetingsArray;
+  let meetingsSortedByWeekDay = sortMeetingsByDay(arr);
+  const sortMeetingsArrayByStartTime = meetingsSortedByWeekDay.sort((a, b) => {
+    if (a.dayOfWeek === b.dayOfWeek && a.start === b.start) {
+      const aMeetingLength = parseInt(a.end) - parseInt(a.start);
+      const bMeetingLength = parseInt(b.end) - parseInt(b.start);
+      return aMeetingLength - bMeetingLength;
+    } else if (a.dayOfWeek === b.dayOfWeek) {
+      return parseInt(a.start) - parseInt(b.start);
+    } else {
+      return 0;
+    }
+  });
+  return sortMeetingsArrayByStartTime;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -417,7 +418,7 @@ describe('Testing challenge 12', () => {
   });
 });
 
-xdescribe('Testing challenge 13', () => {
+describe('Testing challenge 13', () => {
   test('It should sort meetings by when they happen', () => {
     expect(sortSchedule(meetings)).toStrictEqual([
       new Meeting('Monday', '0900', '0945'),
