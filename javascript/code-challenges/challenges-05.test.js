@@ -280,10 +280,24 @@ const snorlaxData = {
 };
 
 const extractStat = (statName, arr) => {
-  // Solution code here...
+  // let statNameMatchObject = arr.reduce((accumulator, currentStat) => {
+  //   if (currentStat.stat.name === statName) {
+  //     return { stat: currentStat.stat, effort: currentStat.effort, baseStat: currentStat.baseStat};
+  //   }
+  //   else {
+  //     return null;
+  //   }
+  // }, { stat: {}, effort: 0, baseStat: 0});
+  // return statNameMatchObject;
 };
 
-/* ------------------------------------------------------------------------------------------------
+/*
+
+Write a function named extractState that, given the snorlaxData, below, uses reduce to return the object whose 'name' property matches the given string.
+
+If the input array does not have a stat with that specific name, the function should return null.
+
+------------------------------------------------------------------------------------------------
 CHALLENGE 11 - Stretch Goal
 
 Write a function named extractChildren that, given the array of characters from challenge 4, accomplishes the following:
@@ -294,10 +308,23 @@ Write a function named extractChildren that, given the array of characters from 
 ------------------------------------------------------------------------------------------------ */
 
 const extractChildren = (arr) => {
-  // Solution code here...
+  const charactersNameContainingA = arr.filter ( currentCharacter => {
+    return currentCharacter.name.includes('a');
+  });
+  const childrenNamesArray = charactersNameContainingA.reduce ((accumulator, currentCharacter) => {
+    if (currentCharacter.children){
+      for (let i=0; i < currentCharacter.children.length; i++) {
+        accumulator.push(currentCharacter.children[i]);
+      } return accumulator;
+    } else {
+      return accumulator;
+    }
+  },[]);
+  return childrenNamesArray;
 };
 
-/* ------------------------------------------------------------------------------------------------
+/*
+------------------------------------------------------------------------------------------------
 TESTS
 
 All the code below will verify that your functions are working to solve the challenges.
@@ -375,7 +402,7 @@ xdescribe('Testing challenge 10', () => {
   });
 });
 
-xdescribe('Testing challenge 11', () => {
+describe('Testing challenge 11', () => {
   test('It should return an array containing the names of the children', () => {
     expect(extractChildren(characters)).toStrictEqual([ 'Robb', 'Sansa', 'Arya', 'Bran', 'Rickon', 'Drogon', 'Rhaegal', 'Viserion', 'Margaery', 'Loras' ]);
     expect(extractChildren(characters).length).toStrictEqual(10);
