@@ -146,10 +146,20 @@ You may also use other string or array methods.
 
 const splitFoods = (recipe) => {
   let result = [];
-  // Solution code here...
+  recipe.ingredients.map( ingredient => {
+    let splitIngredient = ingredient.split(' ');
+    let slicedIngredient = splitIngredient.slice(2);
+    let joinedIngredient = slicedIngredient.join(' ');
+    result.push(joinedIngredient);
+  });
   return result;
 };
 
+// ingredients: [
+//   [1, medium-sized, Gruffalo],
+//   '8 pounds oats',
+//   '2 pounds brown sugar',
+//   '4 pounds flour',
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 8 - Stretch Goal
 
@@ -297,7 +307,7 @@ describe('Testing challenge 6', () => {
   });
 });
 
-xdescribe('Testing challenge 7', () => {
+describe('Testing challenge 7', () => {
   test('It should return a list of foods', () => {
     expect(splitFoods(gruffaloCrumble)).toStrictEqual(['Gruffalo', 'oats', 'brown sugar', 'flour', 'pure maple syrup', 'chopped nuts', 'baking soda', 'baking powder', 'cinnamon', 'melted butter', 'fresh water']);
   });
