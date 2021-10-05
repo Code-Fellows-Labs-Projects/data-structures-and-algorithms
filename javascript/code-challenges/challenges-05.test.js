@@ -193,7 +193,10 @@ const characters = [
 ];
 
 const countNumberOfChildren = (arr) => {
-  // Solution code here...
+  const totalNumberOfChildren = arr.reduce((accumulator, currentCharacter) =>{
+    return currentCharacter.children ? accumulator + currentCharacter.children.length : accumulator;
+  }, 0 );
+  return totalNumberOfChildren;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -205,7 +208,12 @@ Hint: The accumulator should begin as { count: 0, sum: 0 }
 ------------------------------------------------------------------------------------------------ */
 
 const calculateAverage = (arr) => {
-  // Solution code here...
+  const findAverageOfNumbers = arr.reduce((accumulator, currentNumber) => {
+    let count = accumulator.count + 1;
+    let sum = accumulator.sum + currentNumber;
+    return {count: count, sum: sum};
+  }, { count: 0, sum: 0 });
+  return findAverageOfNumbers.sum / findAverageOfNumbers.count;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -226,7 +234,10 @@ const isPrime = (value) => {
 };
 
 const countPrimeNumbers = (arr) => {
-  // Solution code here...
+  const primeNumberCount = arr.reduce((accumulator, currentNumber) => {
+    return isPrime(currentNumber) ? accumulator + 1 : accumulator;
+  }, 0 );
+  return primeNumberCount;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -269,10 +280,14 @@ const snorlaxData = {
 };
 
 const extractStat = (statName, arr) => {
-  // Solution code here...
+  let statNameMatchObject = arr.reduce((accumulator, currentStat) => {
+    return currentStat.stat.name === statName ? currentStat : accumulator;
+  }, {});
+  return statNameMatchObject;
 };
 
-/* ------------------------------------------------------------------------------------------------
+/*
+------------------------------------------------------------------------------------------------
 CHALLENGE 11 - Stretch Goal
 
 Write a function named extractChildren that, given the array of characters from challenge 4, accomplishes the following:
@@ -283,10 +298,23 @@ Write a function named extractChildren that, given the array of characters from 
 ------------------------------------------------------------------------------------------------ */
 
 const extractChildren = (arr) => {
-  // Solution code here...
+  const charactersNameContainingA = arr.filter ( currentCharacter => {
+    return currentCharacter.name.includes('a');
+  });
+  const childrenNamesArray = charactersNameContainingA.reduce ((accumulator, currentCharacter) => {
+    if (currentCharacter.children){
+      for (let i=0; i < currentCharacter.children.length; i++) {
+        accumulator.push(currentCharacter.children[i]);
+      } return accumulator;
+    } else {
+      return accumulator;
+    }
+  },[]);
+  return childrenNamesArray;
 };
 
-/* ------------------------------------------------------------------------------------------------
+/*
+------------------------------------------------------------------------------------------------
 TESTS
 
 All the code below will verify that your functions are working to solve the challenges.
@@ -340,31 +368,31 @@ describe('Testing challenge 6', () => {
   });
 });
 
-xdescribe('Testing challenge 7', () => {
+describe('Testing challenge 7', () => {
   test('It should return the total number of children', () => {
     expect(countNumberOfChildren(characters)).toStrictEqual(14);
   });
 });
 
-xdescribe('Testing challenge 8', () => {
+describe('Testing challenge 8', () => {
   test('It should return the average of the numbers in the array', () => {
     expect(calculateAverage([18, 290, 37, 4, 55, 16, 7, 85 ])).toStrictEqual(64);
   });
 });
 
-xdescribe('Testing challenge 9', () => {
+describe('Testing challenge 9', () => {
   test('It should return a count of the prime numbers in the array', () => {
     expect(countPrimeNumbers([1, 2, 13, 64, 45, 56, 17, 8])).toStrictEqual(3);
   });
 });
 
-xdescribe('Testing challenge 10', () => {
+describe('Testing challenge 10', () => {
   test('It should return any stats that match the input', () => {
     expect(extractStat('speed', snorlaxData.stats)).toStrictEqual({ stat: { url: 'https://pokeapi.co/api/v2/stat/6/', name: 'speed' }, effort: 5, baseStat: 30 });
   });
 });
 
-xdescribe('Testing challenge 11', () => {
+describe('Testing challenge 11', () => {
   test('It should return an array containing the names of the children', () => {
     expect(extractChildren(characters)).toStrictEqual([ 'Robb', 'Sansa', 'Arya', 'Bran', 'Rickon', 'Drogon', 'Rhaegal', 'Viserion', 'Margaery', 'Loras' ]);
     expect(extractChildren(characters).length).toStrictEqual(10);
