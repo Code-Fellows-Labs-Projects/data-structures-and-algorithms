@@ -155,11 +155,6 @@ const splitFoods = (recipe) => {
   return result;
 };
 
-// ingredients: [
-//   [1, medium-sized, Gruffalo],
-//   '8 pounds oats',
-//   '2 pounds brown sugar',
-//   '4 pounds flour',
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 8 - Stretch Goal
 
@@ -172,9 +167,26 @@ Return a new array containing just the verbs. For example, ['Mix until evenly di
 
 const stepActions = (recipe) => {
   let result = [];
-  // Solution code here...
+  recipe.steps.map(step =>{
+    let splitStep = step.split(' ');
+    let slicedAction = splitStep.slice(0,1);
+    let joinedIngredient = slicedAction.join(' ');
+    result.push(joinedIngredient);
+  });
   return result;
 };
+
+// steps: [
+//   'Pre-heat a large oven to 375',
+//   'De-prickle the gruffalo',
+//   'Sprinkle with cinnamon, sugar, flour, and nuts',
+//   'Mix until evenly distributed',
+//   'Grease a 3-foot x 3-foot casserole dish',
+//   'Combine gruffalo compote with water to maintain moisture in the oven',
+//   'Fold together remaining ingredients to make the crisp',
+//   'Spread the crisp evenly over the gruffalo mixture',
+//   'Bake for 12-15 hours',
+// ]
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 9 - Stretch Goal
@@ -313,7 +325,7 @@ describe('Testing challenge 7', () => {
   });
 });
 
-xdescribe('Testing challenge 8', () => {
+describe('Testing challenge 8', () => {
   test('It should return a list of recipe steps', () => {
     expect(stepActions(gruffaloCrumble)).toStrictEqual(['Pre-heat', 'De-prickle', 'Sprinkle', 'Mix', 'Grease', 'Combine', 'Fold', 'Spread', 'Bake']);
     expect(stepActions(gruffaloCrumble).length).toStrictEqual(9);
