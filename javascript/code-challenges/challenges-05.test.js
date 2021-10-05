@@ -208,7 +208,12 @@ Hint: The accumulator should begin as { count: 0, sum: 0 }
 ------------------------------------------------------------------------------------------------ */
 
 const calculateAverage = (arr) => {
-  // Solution code here...
+  const findAverageOfNumbers = arr.reduce((accumulator, currentNumber) => {
+    let count = accumulator.count + 1;
+    let sum = accumulator.sum + currentNumber;
+    return {count: count, sum: sum};
+  }, { count: 0, sum: 0 });
+  return findAverageOfNumbers.sum / findAverageOfNumbers.count;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -349,7 +354,7 @@ describe('Testing challenge 7', () => {
   });
 });
 
-xdescribe('Testing challenge 8', () => {
+describe('Testing challenge 8', () => {
   test('It should return the average of the numbers in the array', () => {
     expect(calculateAverage([18, 290, 37, 4, 55, 16, 7, 85 ])).toStrictEqual(64);
   });
