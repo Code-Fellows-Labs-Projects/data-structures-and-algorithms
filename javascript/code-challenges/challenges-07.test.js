@@ -176,18 +176,6 @@ const stepActions = (recipe) => {
   return result;
 };
 
-// steps: [
-//   'Pre-heat a large oven to 375',
-//   'De-prickle the gruffalo',
-//   'Sprinkle with cinnamon, sugar, flour, and nuts',
-//   'Mix until evenly distributed',
-//   'Grease a 3-foot x 3-foot casserole dish',
-//   'Combine gruffalo compote with water to maintain moisture in the oven',
-//   'Fold together remaining ingredients to make the crisp',
-//   'Spread the crisp evenly over the gruffalo mixture',
-//   'Bake for 12-15 hours',
-// ]
-
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 9 - Stretch Goal
 
@@ -202,7 +190,11 @@ For example:
 ------------------------------------------------------------------------------------------------ */
 
 const removeEvenValues = (arr) => {
-  // Solution code here...
+  for (let i = arr.length-1; i>= 0; i--){
+    if (arr[i] % 2 === 0) {
+      arr.splice(i, 1);
+    }
+  }
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -332,7 +324,7 @@ describe('Testing challenge 8', () => {
   });
 });
 
-xdescribe('Testing challenge 9', () => {
+describe('Testing challenge 9', () => {
   test('It should remove the even numbers from the array', () => {
     let list = [1, 2, 3, 4, 5, 6];
     removeEvenValues(list);
