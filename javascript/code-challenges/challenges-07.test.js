@@ -245,7 +245,7 @@ For example, removeVowels('gregor') returns 'grgr'.
 ------------------------------------------------------------------------------------------------ */
 
 const removeVowels = (str) => {
-  let stringWithoutVowels = str = str.replace( /[aeiou]/ig, '' );
+  let stringWithoutVowels = str.replace( /[aeiou]/ig, '' );
   return stringWithoutVowels;
 };
 
