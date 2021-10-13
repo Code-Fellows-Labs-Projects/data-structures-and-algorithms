@@ -165,8 +165,9 @@ const hasChildrenValues = (arr, character) => {
   arr.forEach(obj => {
     if (obj.name === character) {
       Object.keys(obj).forEach(key => {
-        if (key === 'children')
+        if (key === 'children') {
           children = Object.values(obj.children).length;
+        }
       });
     }
   });
@@ -193,8 +194,24 @@ The input and output of this function are the same as the input and output from 
 ------------------------------------------------------------------------------------------------ */
 
 const hasChildrenEntries = (arr, character) => {
-  // Solution code here...
+  let children = 0;
+  arr.forEach(obj => {
+    if (obj.name === character) {
+      Object.entries(obj).forEach(entry => {
+        if (entry[0] === 'children') {
+          children = Object.values(obj.children).length;
+        }
+      });
+    }
+  });
+  return children ? true : false;
 };
+
+// [ 'name', 'Mace' ],
+// [ 'spouse', 'Alerie' ],
+// [ 'children', ['Margaery', 'Loras'] ],
+// [ 'house', 'Tyrell' ],
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 8 - Stretch Goal
@@ -312,7 +329,7 @@ describe('Testing challenge 6', () => {
   });
 });
 
-xdescribe('Testing challenge 7', () => {
+describe('Testing challenge 7', () => {
   test('It should return true for characters that have children', () => {
     expect(hasChildrenEntries(characters, 'Eddard')).toBeTruthy();
   });
