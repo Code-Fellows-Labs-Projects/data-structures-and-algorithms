@@ -174,17 +174,6 @@ const hasChildrenValues = (arr, character) => {
   return children ? true : false;
 };
 
-// const hasChildrenValues = (arr, character) => {
-//   arr.forEach(obj => {
-//     if (obj.name === character) {
-//       if (Object.values(obj)) {
-//         return true;
-//       }
-//     } else {
-//       return false;
-//     }
-//   });
-// };
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 7 - Stretch Goal
 
@@ -199,19 +188,13 @@ const hasChildrenEntries = (arr, character) => {
     if (obj.name === character) {
       Object.entries(obj).forEach(entry => {
         if (entry[0] === 'children') {
-          children = Object.values(obj.children).length;
+          children = obj.children.length;
         }
       });
     }
   });
   return children ? true : false;
 };
-
-// [ 'name', 'Mace' ],
-// [ 'spouse', 'Alerie' ],
-// [ 'children', ['Margaery', 'Loras'] ],
-// [ 'house', 'Tyrell' ],
-
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 8 - Stretch Goal
@@ -220,7 +203,17 @@ Write a function named totalCharacters that takes in an array and returns the nu
 ------------------------------------------------------------------------------------------------ */
 
 const totalCharacters = (arr) => {
-  // Solution code here...
+  let totalNumberOfCharacters = 0;
+  arr.forEach(obj => {
+    totalNumberOfCharacters++;
+    if (obj.spouse){
+      totalNumberOfCharacters++;
+    }
+    if (obj.children) {
+      totalNumberOfCharacters += obj.children.length;
+    }
+  });
+  return totalNumberOfCharacters;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -339,7 +332,7 @@ describe('Testing challenge 7', () => {
   });
 });
 
-xdescribe('Testing challenge 8', () => {
+describe('Testing challenge 8', () => {
   test('It should return the number of characters in the array', () => {
     expect(totalCharacters(characters)).toStrictEqual(27);
   });
