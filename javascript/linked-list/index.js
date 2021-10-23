@@ -78,7 +78,9 @@ class LinkedList {
   }
 }
 
-// creates an empty linked list
-const list = new LinkedList();
 
-module.exports = LinkedList;
+
+module.exports = {
+  LinkedList,
+  Node
+};
