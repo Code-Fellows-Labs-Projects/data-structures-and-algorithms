@@ -27,10 +27,11 @@ class LinkedList {
   traverseLLRecursive() {
     try {
       let current = this.head;
+      // recursive case
       if (current) {
         console.log(current);
         traverseLLRecursive(current.next);
-      } return;
+      } return; // base case
     } catch (error) {
       console.log('Unable to recursively traverse LinkedList: ', error);
     }
