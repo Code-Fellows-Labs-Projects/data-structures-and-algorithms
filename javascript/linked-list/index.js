@@ -20,7 +20,7 @@ class LinkedList {
         current = current.next;
       }
     } catch (error) {
-      console.log('Unable to iteratively traverse LinkedList: ', error);
+      throw `Unable to iteratively traverse LinkedList: ${error}`;
     }
   }
 
@@ -33,7 +33,7 @@ class LinkedList {
         traverseLLRecursive(current.next);
       } return; // base case
     } catch (error) {
-      console.log('Unable to recursively traverse LinkedList: ', error);
+      throw `Unable to recursively traverse LinkedList: ${error}`;
     }
   }
 
@@ -41,10 +41,15 @@ class LinkedList {
   insert(value) {
     try {
       let nodeToInsert = new Node(value);
-      nodeToInsert.next = this.head;
-      this.head = nodeToInsert;
+      if (this.head === null) {
+        this.head = nodeToInsert;
+        this.tail = nodeToInsert;
+      } else {
+        nodeToInsert.next = this.head;
+        this.head = nodeToInsert;
+      }
     } catch (error) {
-      console.log('Unable to insert value into the head: ', error);
+      throw `Unable to insert value into the head: ${error}`;
     }
   }
 
@@ -60,7 +65,7 @@ class LinkedList {
       }
       return false;
     } catch (error) {
-      console.log('Unable to search for value in LinkedList: ', error);
+      throw `Unable to search for value in LinkedList: ${error}`;
     }
   }
 
@@ -74,12 +79,73 @@ class LinkedList {
         current = current.next;
       } return string += 'NULL';
     } catch (error) {
-      console.log('Unable to return LinkedList values as a string: ', error);
+      throw `Unable to return LinkedList values as a string: ${error}`;
     }
   }
+
+  // adds a new node with the given value to the end of the list
+  append(value) {
+    try {
+      let current = this.head;
+      let newNode = new Node(value);
+      if (this.head === null) {
+        this.head = newNode;
+      } else {
+        while (current.next) {
+          current = current.next;
+        } current.next = new Node(value);
+      }
+    } catch (error) {
+      throw `Unable to append value: ${error}`;
+    }
+  }
+
+  // adds a new node with the given new value immediately before the first node that has the value specified
+  insertBefore(value, newValue) {
+    try {
+      if (this.head) {
+        let current = this.head;
+        let previous = null;
+        while (current) {
+          if (current.value === value) {
+            let newNode = new Node(newValue);
+            newNode.next = current;
+            if (previous) {
+              previous.next = newNode;
+            } else {
+              this.head = newNode;
+            }
+          }
+          previous = current;
+          current = current.next;
+        }
+      }
+    } catch (error) {
+      throw `Unable to add a new Node before the value specified: ${error}`;
+    }
+  }
+
+  // adds a new node with the given new value immediately after the first node that has the value specified
+  insertAfter(value, newValue) {
+    try {
+      if (this.head) {
+        let current = this.head;
+        while (current) {
+          if (current.value === value) {
+            let saveRestOfList = current.next;
+            let newNode = new Node(newValue);
+            current.next = newNode;
+            newNode.next = saveRestOfList;
+          }
+          current = current.next;
+        }
+      }
+    } catch (error) {
+      throw `Unable to add a new Node after the value specified: ${error}`;
+    }
+  }
+
 }
-
-
 
 module.exports = {
   LinkedList,
