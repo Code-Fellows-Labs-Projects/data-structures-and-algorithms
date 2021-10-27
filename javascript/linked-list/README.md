@@ -254,6 +254,10 @@ function insertAfter()
 
 ![WhiteBoard](./src/whiteboard.png)
 
+**zipLists WhiteBoard**
+
+![WhiteBoard](./src/zipWhiteboard.png)
+
 ## Solution Code
 
 [index.js](./index.js)
