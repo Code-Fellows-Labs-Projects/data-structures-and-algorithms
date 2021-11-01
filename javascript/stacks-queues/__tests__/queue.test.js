@@ -1,7 +1,7 @@
 'use strict';
 
 // Require our stack class
-const { Queue } = require('../index');
+const Queue  = require('../classes/queue.js');
 
 describe('Testing Queue', () => {
 
