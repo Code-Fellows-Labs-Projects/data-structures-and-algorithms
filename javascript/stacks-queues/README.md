@@ -1,7 +1,7 @@
 # Stacks and Queues
 
 ## Problem Domain
-Create a stack class with push, pop, peek, and isEmpty methods. Create a queue class with enqueue, dequeue, peek, and isEmpty methods. Create a queue class using two Stacks with enqueue and dequeue methods. Create a test suite to determine the correct functionality of each class. 
+Create a stack class with push, pop, peek, and isEmpty methods. Create a queue class with enqueue, dequeue, peek, and isEmpty methods. Create a pseudo queue class using two Stacks with enqueue and dequeue methods. Create an animal shelter queue class with enqueue and dequeue methods. Create a test suite to determine the correct functionality of each class.
 
 ## Inputs / Outputs
 
@@ -60,6 +60,17 @@ Output: none
 Input: none  
 Output: value of removed node
 
+### Animal Shelter Queue
+
+**Enqueue Method**
+
+Input: value   
+Output: none
+
+**Dequeue Method**
+
+Input: none  
+Output: value of removed node
 
 ## Solution Code
 
@@ -71,6 +82,8 @@ Output: value of removed node
 
 [pseudo queue](./classes/pseudoQueue.js)
 
+[animal shelter queue](./classes/animalShelter.js)
+
 ## Tests
 
 [Queue Tests](./__tests__/queue.test.js)
@@ -78,3 +91,5 @@ Output: value of removed node
 [Stack Tests](./__tests__/stack.test.js)
 
 [Pseudo Queue Tests](./__tests__/pseudoQueue.test.js)
+
+[Animal Shelter Queue Tests](./__tests__/shelter.test.js)
