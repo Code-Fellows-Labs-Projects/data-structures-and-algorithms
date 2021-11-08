@@ -1,40 +1,77 @@
 'use strict';
 
-class Node {
-  constructor(value){
-    this.value = value;
-    this.left = null;
-    this.right = null;
-  }
-}
-
 class BinaryTree {
-  constructor(){
+  constructor() {
     this.root = null;
+    this.valuesArray = [];
   }
 
   // Pre-order: root >> left >> right
-  preOrderTraversal(root){
-    console.log(root.value);
+  preOrderTraversal(current) {
+    this.valuesArray.push(current.value);
 
-    if (root.left !== null){
-      this.preOrderTraversal(root.left);
+    if (current.left !== null) {
+      this.preOrderTraversal(current.left);
     }
 
-    if (root.right !== null){
-      this.preOrderTraversal(root.right);
+    if (current.right !== null) {
+      this.preOrderTraversal(current.right);
     }
   }
+
+  // returns array of values, ordered appropriately (pre-order)
+  getPreOrder() {
+    // clear out array
+    this.valuesArray = [];
+
+    this.preOrderTraversal(this.root);
+    return this.valuesArray;
+  }
+
+
   // In-order: left >> root >> right
-  inOrderTraversal(){
-    
+  inOrderTraversal(current) {
+    if (current.left !== null) {
+      this.inOrderTraversal(current.left);
+    }
+
+    this.valuesArray.push(current.value);
+
+    if (current.right !== null) {
+      this.inOrderTraversal(current.right);
+    }
   }
+
+  // returns array of values, ordered appropriately (In-order)
+  getInOrder() {
+    // clear out array
+    this.valuesArray = [];
+
+    this.inOrderTraversal(this.root);
+    return this.valuesArray;
+  }
+
   // Post-order: left >> right >> root
-  postOrderTraversal(){
-    
+  postOrderTraversal(current) {
+    if (current.left !== null) {
+      this.postOrderTraversal(current.left);
+    }
+
+    if (current.right !== null) {
+      this.postOrderTraversal(current.right);
+    }
+
+    this.valuesArray.push(current.value);
   }
 
+  // returns array of values, ordered appropriately (Post-order)
+  getPostOrder() {
+    // clear out array
+    this.valuesArray = [];
 
-// post order which returns an array of the values, ordered appropriately.
+    this.postOrderTraversal(this.root);
+    return this.valuesArray;
+  }
 }
 
+module.exports = BinaryTree;
