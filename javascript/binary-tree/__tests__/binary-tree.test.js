@@ -13,6 +13,8 @@ describe('Testing Binary Tree', () => {
     const tree = new BinaryTree();
     tree.root = new Node('A');
     expect(tree.root.value).toStrictEqual('A');
+    expect(tree.root.right).toStrictEqual(null);
+    expect(tree.root.left).toStrictEqual(null);
   });
 
   it('Can add a left child and right child to a single root node', () => {

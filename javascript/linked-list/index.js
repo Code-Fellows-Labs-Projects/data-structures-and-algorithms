@@ -30,7 +30,7 @@ class LinkedList {
       // recursive case
       if (current) {
         console.log(current);
-        traverseLLRecursive(current.next);
+        this.traverseLLRecursive(current.next);
       } return; // base case
     } catch (error) {
       throw `Unable to recursively traverse LinkedList: ${error}`;
