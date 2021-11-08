@@ -5,7 +5,8 @@
 [Array-Insert-Shift](./array-insert-shift/README.md)  
 [Array-Binary-Search](./array-binary-search/README.md)  
 [Linked-Lists](./linked-list/README.md)
-[Stacks-Queues](./stacks-queues/README.md)
+[Stacks-Queues](./stacks-queues/README.md)  
+[Trees](./trees/README.md)
 
 ## Language: `JavaScript`
 

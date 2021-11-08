@@ -19,7 +19,9 @@ class BinarySearchTree extends BinaryTree {
       let current = this.root;
 
       while (current) {
-        if (current.value < value) {
+        if (current.value === value) {
+          throw 'No duplicates. Value already exists in tree';
+        } else if (current.value < value) {
           if (!current.right) {
             current.right = new Node(value);
             break;

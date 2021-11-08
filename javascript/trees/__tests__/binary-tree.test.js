@@ -35,7 +35,7 @@ describe('Testing Binary Tree', () => {
     tree.root.left.left = new Node('D');
     tree.root.left.right = new Node('E');
     tree.root.right.left = new Node('F');
-    expect(tree.getPreOrder()).toStrictEqual([ 'A', 'B', 'D', 'E', 'C', 'F' ]);
+    expect(tree.preOrderHelper()).toStrictEqual([ 'A', 'B', 'D', 'E', 'C', 'F' ]);
   });
 
   it('Can return a collection from a inorder traversal', () => {
@@ -46,7 +46,7 @@ describe('Testing Binary Tree', () => {
     tree.root.left.left = new Node('D');
     tree.root.left.right = new Node('E');
     tree.root.right.left = new Node('F');
-    expect(tree.getInOrder()).toStrictEqual([ 'D', 'B', 'E', 'A', 'F', 'C' ]);
+    expect(tree.inOrderHelper()).toStrictEqual([ 'D', 'B', 'E', 'A', 'F', 'C' ]);
   });
 
   it('Can return a collection from a postorder traversal', () => {
@@ -57,7 +57,18 @@ describe('Testing Binary Tree', () => {
     tree.root.left.left = new Node('D');
     tree.root.left.right = new Node('E');
     tree.root.right.left = new Node('F');
-    expect(tree.getPostOrder()).toStrictEqual([ 'D', 'E', 'B', 'F', 'C', 'A' ]);
+    expect(tree.postOrderHelper()).toStrictEqual([ 'D', 'E', 'B', 'F', 'C', 'A' ]);
+  });
+
+  it('Can return the max value in binary tree', () => {
+    const tree = new BinaryTree();
+    tree.root = new Node(23);
+    tree.root.left = new Node(8);
+    tree.root.right = new Node(42);
+    tree.root.left.left = new Node(4);
+    tree.root.left.right = new Node(16);
+    tree.root.right.left = new Node(27);
+    expect(tree.findMaxHelper()).toStrictEqual(42);
   });
 
 });
