@@ -35,7 +35,7 @@ describe('Testing Binary Search Tree', () => {
     tree.root.left.left = new Node(4);
     tree.root.left.right = new Node(16);
     tree.root.right.left = new Node(27);
-    expect(tree.getPreOrder()).toStrictEqual([ 23, 8, 4, 16, 42, 27 ]);
+    expect(tree.preOrderHelper()).toStrictEqual([ 23, 8, 4, 16, 42, 27 ]);
   });
 
   it('Can return a collection from a inorder traversal', () => {
@@ -46,7 +46,7 @@ describe('Testing Binary Search Tree', () => {
     tree.root.left.left = new Node(4);
     tree.root.left.right = new Node(16);
     tree.root.right.left = new Node(27);
-    expect(tree.getInOrder()).toStrictEqual([ 4, 8, 16, 23, 27, 42 ]);
+    expect(tree.inOrderHelper()).toStrictEqual([ 4, 8, 16, 23, 27, 42 ]);
   });
 
   it('Can return a collection from a postorder traversal', () => {
@@ -57,7 +57,26 @@ describe('Testing Binary Search Tree', () => {
     tree.root.left.left = new Node(4);
     tree.root.left.right = new Node(16);
     tree.root.right.left = new Node(27);
-    expect(tree.getPostOrder()).toStrictEqual([ 4, 16, 8, 27, 42, 23 ]);
+    expect(tree.postOrderHelper()).toStrictEqual([ 4, 16, 8, 27, 42, 23 ]);
   });
 
+  it('Can add a new node in the correct location in the binary search tree', () => {
+    const tree = new BinarySearchTree();
+    tree.root = new Node(23);
+    tree.root.left = new Node(8);
+    tree.root.right = new Node(42);
+    tree.root.left.left = new Node(4);
+    tree.root.left.right = new Node(16);
+    tree.root.right.left = new Node(27);
+    tree.add(6);
+    expect(tree.root.left.left.right.value).toStrictEqual(6);
+  });
+
+  it('Can indicating whether or not the value is in the tree at least once', () => {
+    const tree = new BinarySearchTree();
+    tree.root = new Node(23);
+    tree.root.left = new Node(8);
+    expect(tree.contains(8)).toStrictEqual(true);
+    expect(tree.contains(400)).toStrictEqual(false);
+  });
 });

@@ -4,6 +4,7 @@ class BinaryTree {
   constructor() {
     this.root = null;
     this.valuesArray = [];
+    this.tempMax = 0;
   }
 
   // Pre-order: root >> left >> right
@@ -24,7 +25,7 @@ class BinaryTree {
   }
 
   // returns array of values, ordered appropriately (pre-order)
-  getPreOrder() {
+  preOrderHelper() {
     try {
       // clear out array
       this.valuesArray = [];
@@ -55,7 +56,7 @@ class BinaryTree {
   }
 
   // returns array of values, ordered appropriately (In-order)
-  getInOrder() {
+  inOrderHelper() {
     try {
       // clear out array
       this.valuesArray = [];
@@ -85,7 +86,7 @@ class BinaryTree {
   }
 
   // returns array of values, ordered appropriately (Post-order)
-  getPostOrder() {
+  postOrderHelper() {
     try {
       // clear out array
       this.valuesArray = [];
@@ -94,6 +95,41 @@ class BinaryTree {
       return this.valuesArray;
     } catch (error) {
       throw `Unable to return array of values in post-order: ${error}`;
+    }
+  }
+
+  // finds the maximum value stored in the tree.
+  findMax(current) {
+    try {
+      if (current.value > this.tempMax) {
+        this.tempMax = current.value;
+      }
+
+      if (current.left) {
+        this.findMax(current.left);
+      }
+
+      if (current.right) {
+        this.findMax(current.right);
+      }
+    } catch (error) {
+      throw `Unable to find max value in binary tree: ${error}`;
+    }
+
+  }
+
+  // returns the max value in the binary tree
+  findMaxHelper() {
+    try {
+      if (!this.root) {
+        throw 'Cannot search for max. Binary tree does not have a root';
+      }
+      // clear out tempMax
+      this.tempMax = 0;
+      this.findMax(this.root);
+      return this.tempMax;
+    } catch (error) {
+      throw `Unable to return max value in binary tree: ${error}`;
     }
   }
 }
