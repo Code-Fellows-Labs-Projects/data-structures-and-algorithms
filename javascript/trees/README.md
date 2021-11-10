@@ -76,11 +76,12 @@ Output: boolean
 ## Solution Code
 
 [Binary Tree](./binary-tree.js)  
-[Binary Search Tree](./binary-search-tree.js)
+[Binary Search Tree](./binary-search-tree.js)  
+[Tree Breadth First Traversal Function](./tree-breadth-first.js)  
 
 
 ## Tests
 
 [Binary Tree Tests](./__tests__/binary-tree.test.js)  
-[Binary Search Tree Tests](./__tests__/binary-search.test.js)
-
+[Binary Search Tree Tests](./__tests__/binary-search.test.js)  
+[Tree Breadth First Traversal Test](./__tests__/tree-breadth.test.js)  
