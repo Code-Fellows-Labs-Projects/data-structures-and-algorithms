@@ -4,9 +4,9 @@ function quickSort(array, start, end) {
   if (start < end) {
     // set position of pivot value
     let position = partition(array, start, end);
-    // sort the left side
+    // sort the left
     quickSort(array, start, position - 1);
-    // sort the right side
+    // sort the right
     quickSort(array, position + 1, end);
   }
   return array;
@@ -15,27 +15,23 @@ function quickSort(array, start, end) {
 function partition(array, start, end) {
   // set the pivot value to the last element
   let pivotValue = array[end];
-  let pivotIndex = start;
+  let low = start -1;
 
-  for (let i = start; i < end; i++) {
-    if (array[i] < pivotValue) {
-      // swap elements
-      swap(array, i, pivotIndex);
+  for (let i = start; i <= end; i++) {
+    if (array[i] <= pivotValue) {
       // move to the next element
-      pivotIndex++;
+      low++;
+      // swap elements
+      swap(array, i, low);
     }
   }
-  // Put the pivot value in the middle of both sides and swap values with the element at that index
-  let temp = array[pivotIndex];
-  array[pivotIndex] = array[end];
-  array[end] = temp;
-  return pivotIndex;
+  return low;
 }
 
-function swap(array, i, pivotIndex) {
+function swap(array, i, low) {
   let temp = array[i];
-  array[i] = array[pivotIndex];
-  array[pivotIndex] = temp;
+  array[i] = array[low];
+  array[low] = temp;
 }
 
 module.exports = quickSort;

@@ -1,6 +1,6 @@
 # Quick-Sort Recursive Method
 
-Quick Sort is a function that takes in an unsorted array and sorts it in ascending order, by dividing the array into subarrays, using a pivot value to determine whether elements should be sorted to the left or right subarray.
+Quick Sort is a function that takes in an unsorted array and sorts it in ascending order, by partitioning the array, using a pivot value to determine whether elements should be sorted to the left or right. The array is sorted in place.
 
 ## Algorithm
 
@@ -49,7 +49,10 @@ Our array has been sorted!
 
 ## Efficency
 
-**Time: O(n^2)**
+divide-and-conquer algorithm
 
-**Space: O(long(n))**
+**Time: O(nlogn)** it takes n steps to partition the array, at log n times.
+
+**Space: O(1)** Since it only swaps elements within the array and does not create subarrays, it uses O(1) space.
+
 
