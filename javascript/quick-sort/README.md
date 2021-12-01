@@ -21,9 +21,11 @@ Quick Sort is a function that takes in an unsorted array and sorts it in ascendi
 
 ## Efficiency
 
-**Time: O(n^2)**
+divide-and-conquer algorithm
 
-**Space: O(long(n))**
+**Time: O(nlogn)** it takes n steps to partition the array, at log n times.
+
+**Space: O(1)** Since it only swaps elements within the array and does not create subarrays, it uses O(1) space.
 
 ## Solution Code
 
