@@ -21,9 +21,11 @@ Merge Sort is a function that takes in an unsorted array and splits it in half u
 
 ## Efficiency
 
-Time: 
+divide-and-conquer algorithm
 
-Space:
+**Time: O(nlogn)** it takes n steps to merge arrays, log n times
+
+**Space: O(n)** it usese n elements stored in arrays to merge, it uses O(n) space
 
 ## Solution Code
 

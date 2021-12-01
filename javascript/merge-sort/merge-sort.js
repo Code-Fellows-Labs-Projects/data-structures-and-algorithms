@@ -5,44 +5,44 @@ function mergeSort(array) {
 
   if (arrayLength > 1){
     let mid = Math.floor(arrayLength/2);
-    let left = array.slice(0, mid);
-    let right = array.slice(mid);
+    let leftSubarray = array.slice(0, mid);
+    let rightSubarray = array.slice(mid);
 
-    mergeSort(left);
-    mergeSort(right);
+    mergeSort(leftSubarray);
+    mergeSort(rightSubarray);
 
-    mergeHelper(left, right, array);
+    mergeHelper(leftSubarray, rightSubarray, array);
   }
   return array;
 }
 
 function mergeHelper(left, right, array){
-  let i = 0;
-  let j = 0;
-  let k = 0;
+  let leftIndex = 0;
+  let rightIndex = 0;
+  let arrayIndex = 0;
 
-  while (i < left.length && j < right.length){
-    if (left[i] <= right[j]){
-      array[k] = left[i];
-      i++;
+  while (leftIndex < left.length && rightIndex < right.length){
+    if (left[leftIndex] <= right[rightIndex]){
+      array[arrayIndex] = left[leftIndex];
+      leftIndex++;
     } else {
-      array[k] = right[j];
-      j++;
+      array[arrayIndex] = right[rightIndex];
+      rightIndex++;
     }
-    k++;
+    arrayIndex++;
   }
 
-  if ( i === left.length) {
-    while(k < array.length) {
-      array[k] = right[j];
-      j++;
-      k++;
+  if ( leftIndex === left.length) {
+    while(arrayIndex < array.length) {
+      array[arrayIndex] = right[rightIndex];
+      rightIndex++;
+      arrayIndex++;
     }
   } else {
-    while (k < array.length) {
-      array[k] = left[i];
-      i++;
-      k++;
+    while (arrayIndex < array.length) {
+      array[arrayIndex] = left[leftIndex];
+      leftIndex++;
+      arrayIndex++;
     }
   }
 }

@@ -95,7 +95,8 @@ Once the right side is merged, we merge with the left side to receive the final 
 
 ## Efficency
 
-**Time: O(nlogn)**
+divide-and-conquer algorithm
 
-**Space: O(n)**
+**Time: O(nlogn)** it takes n steps to merge arrays, log n times
 
+**Space: O(n)** it usese n elements stored in arrays to merge, it uses O(n) space
