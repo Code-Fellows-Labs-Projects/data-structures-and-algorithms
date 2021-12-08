@@ -27,7 +27,7 @@ describe('Testing Graph', () => {
 
     graph.addDirectEdge(A, B);
 
-    let output = [{'vertex': {'value': 'B'}, 'weight': 0}];
+    let output = [{ 'vertex': { 'value': 'B' }, 'weight': 0 }];
     expect(graph.adjacencyList.get(A)).toEqual(output);
   });
 
@@ -42,7 +42,7 @@ describe('Testing Graph', () => {
     graph.addDirectEdge(A, B);
     graph.addDirectEdge(B, C);
 
-    expect(graph.getNodes()).toEqual([{'value': 'A'}, {'value': 'B'}, {'value': 'C'}]);
+    expect(graph.getNodes()).toEqual([{ 'value': 'A' }, { 'value': 'B' }, { 'value': 'C' }]);
   });
 
   it('All appropriate neighbors can be retrieved from the graph', () => {
@@ -56,7 +56,7 @@ describe('Testing Graph', () => {
     graph.addDirectEdge(A, B);
     graph.addDirectEdge(B, C);
 
-    expect(graph.getNeighbors(A)).toEqual([{'vertex': {'value': 'C'}, 'weight': 0}, {'vertex': {'value': 'B'}, 'weight': 0}]);
+    expect(graph.getNeighbors(A)).toEqual([{ 'vertex': { 'value': 'C' }, 'weight': 0 }, { 'vertex': { 'value': 'B' }, 'weight': 0 }]);
   });
 
   it('Neighbors are returned with the weight between nodes included', () => {
@@ -87,12 +87,29 @@ describe('Testing Graph', () => {
     expect(graph.size()).toBe(3);
   });
 
+  it('Can successfully traverse the graph breadth first', () => {
+    let graph = new Graph();
+
+    let A = graph.addVertex('A');
+    let B = graph.addVertex('B');
+    let C = graph.addVertex('C');
+    let D = graph.addVertex('D');
+    let E = graph.addVertex('E');
+
+    graph.addDirectEdge(A, B);
+    graph.addDirectEdge(A, C);
+    graph.addDirectEdge(A, D);
+    graph.addDirectEdge(A, E);
+
+    expect(graph.vertices).toStrictEqual(graph.breadthFirst(A));
+  });
+
   it('A graph with only one node and edge can be properly returned', () => {
     let graph = new Graph();
     let A = graph.addVertex('A');
     graph.addDirectEdge(A, A);
 
-    expect(graph.getNodes()[0]).toEqual({'value': 'A'});
+    expect(graph.getNodes()[0]).toEqual({ 'value': 'A' });
   });
 
   it('An empty graph properly returns null', () => {
