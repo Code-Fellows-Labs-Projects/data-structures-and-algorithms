@@ -74,6 +74,23 @@ class Graph {
     return visitedNodes;
   }
 
+  depthTraversal (startNode) {
+    let visited = new Set();
+    return this.depthTraversalHelper(startNode, visited);
+  }
+
+  depthTraversalHelper(vertex, visited) {
+    visited.add(vertex);
+    let neighbors = this.getNeighbors(vertex);
+    for(let edge of neighbors) {
+      let neighbor = edge.vertex;
+      if(!visited.has(neighbor)) {
+        this.depthTraversalHelper(neighbor, visited);
+      }
+    }
+    return visited;
+  }
+
   getNodes() {
     let nodes = [];
     this.adjacencyList.forEach((value, key) => {

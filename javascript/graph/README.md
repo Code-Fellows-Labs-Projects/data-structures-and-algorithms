@@ -1,7 +1,7 @@
 # Graphs
 
 ## Problem Domain
-Create a graph. The graph should contains an `add node method` (which adds a node to the graph), an `add edge method` (which adds a new edge between two nodes in the graph), a `get nodes method` (which returns all the nodes in the graph as a set), a `get neighbors method` (which returns a collection of edges connected to the given node), a `size method` (which returns the total number of nodes in the graph), and a `breadth first traversal method` (which returns a collection of nodes in the order they were visited). Includes extensive test suite.
+Create a graph. The graph should contains an `add node method` (which adds a node to the graph), an `add edge method` (which adds a new edge between two nodes in the graph), a `get nodes method` (which returns all the nodes in the graph as a set), a `get neighbors method` (which returns a collection of edges connected to the given node), a `size method` (which returns the total number of nodes in the graph), a `breadth first traversal method` (which returns a collection of nodes in the order they were visited), a `depth first traversal method` (which returns a collection of nodes in their pre-order depth-first traversal order). Includes extensive test suite.
 
 ## Inputs / Outputs
 
@@ -35,6 +35,10 @@ Output: total number of nodes in the graph
 Input: starting node
 Output: collection of nodes in the order they were visited
 
+**Depth First Traversal**
+
+Input: node
+Output: collection of nodes in their pre-order depth-first traversal order
 
 ## Efficiency
 
@@ -61,6 +65,10 @@ Time complexity: O(n)
 **Breadth First Traversal**
 
 Time complexity: O(n)
+
+**Depth First Traversal**
+
+Time complexity: O(V + E)
 
 ## Solution Code
 

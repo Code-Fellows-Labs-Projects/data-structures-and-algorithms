@@ -118,6 +118,34 @@ describe('Testing Graph', () => {
     expect(graph.getNodes()).toEqual(null);
   });
 
+  it('Can traverse graph depth first in pre-order', () => {
+    let graph = new Graph();
+
+    let A = graph.addVertex('A');
+    let B = graph.addVertex('B');
+    let C = graph.addVertex('C');
+    let G = graph.addVertex('G');
+    let D = graph.addVertex('D');
+    let E = graph.addVertex('E');
+    let F = graph.addVertex('F');
+    let H = graph.addVertex('H');
+
+    graph.addDirectEdge(A, B);
+    graph.addDirectEdge(B, A);
+    graph.addDirectEdge(A, D);
+    graph.addDirectEdge(D, A);
+    graph.addDirectEdge(B, C);
+    graph.addDirectEdge(C, B);
+    graph.addDirectEdge(C, G);
+    graph.addDirectEdge(B, D);
+    graph.addDirectEdge(D, B);
+    graph.addDirectEdge(D, E);
+    graph.addDirectEdge(D, H);
+    graph.addDirectEdge(D, F);
+
+    expect(graph.depthTraversal(A)).toEqual(graph.vertices);
+  });
+
 });
 
 
