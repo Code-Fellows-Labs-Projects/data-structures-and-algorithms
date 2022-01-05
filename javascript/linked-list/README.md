@@ -1,7 +1,7 @@
 # Linked-List
 
 ## Problem Domain
-Create a Linked List. The class should contain an `insert method` (which adds a new node to the head of the linked list), an `includes method` (which indicates whether a value exists within the linked list), a `toString method` (which returns a string representing the values in the linked list), an `append method` (which adds a new node with the given value to the end of the list), an `insert before method` (which adds a new node with the given new value immediately before the first node that has the value specified), and an `insert after method` (which adds a new node with the given new value immediately after the first node that has the value specified). Includes semantic error catching and test suite.
+Create a Linked List. The class should contain an `insert method` (which adds a new node to the head of the linked list), an `includes method` (which indicates whether a value exists within the linked list), a `toString method` (which returns a string representing the values in the linked list), an `append method` (which adds a new node with the given value to the end of the list), an `insert before method` (which adds a new node with the given new value immediately before the first node that has the value specified), an `insert after method` (which adds a new node with the given new value immediately after the first node that has the value specified), a `kth from end method`(which returns the k-th value from the end of a linked list), and a `zip lists method`(which zips two linked lists together). Includes semantic error catching and test suite.
 
 ## Inputs / Outputs
 
@@ -102,7 +102,7 @@ Output: `node value at kth from end position`
 
 - set previous to equal current and current to equal current.next
 
-**Insert Before Method**
+**Insert After Method**
 
 - check to see if the list includes a head
 
