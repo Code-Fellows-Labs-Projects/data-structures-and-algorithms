@@ -5,21 +5,37 @@
 ### Javascript Challenges
 
 1). [Challenge: Reverse an Array](./javascript/array-reverse/README.md)  
+
 2). [Challenge: Insert and Shift an Array](./javascript/array-insert-shift/README.md)  
+
 3). [Challenge: Array Binary Search](./javascript/array-binary-search/README.md)  
+
 4). [Challenge: Linked List Insert, Includes, and To-String](./javascript/linked-list/README.md)    
+
 5). [Challenge: Linked List Kth From End](./javascript/linked-list/README.md)    
+
 6). [Challenge: Linked List Zipper](./javascript/linked-list/README.md)  
-7). [Challenge: Queue with Two Stacks](./javascript/stacks-queues/README.md)   
+
+7). [Challenge: Queue with Two Stacks](./javascript/stacks-queues/README.md)  
+
 8). [Challenge: Animal Shelter](./javascript/stacks-queues/README.md)  
+
 9). [Challenge: Find Max Value in Binary Tree](./javascript/trees/README.md) 
-10). [Challenge: Binary Tree Breadth-first Traversal](./javascript/trees/README.md)   
+
+10). [Challenge: Binary Tree Breadth-first Traversal](./javascript/trees/README.md) 
+
 11). [Challenge: FizzBuzz K-ary Tree](./javascript/trees/README.md)   
+
 12). [Challenge: Find First Repeated Word](./javascript/repeated-word/README.md)  
-13). [Challenge: Tree Intersection](./javascript/tree-intersection/README.md)   
-14). [Challenge: Hashmap Left Join](./javascript/left-join/README.md)  
+
+13). [Challenge: Tree Intersection](./javascript/tree-intersection/README.md)  
+
+14). [Challenge: Hashmap Left Join](./javascript/left-join/README.md) 
+
 15). [Challenge: Graph Breadth-First Traversal](./javascript/graph/README.md)  
+
 16). [Challenge: Graph Depth-First Preorder Traversal](./javascript/graph/README.md)  
+
 17). [Challenge: Graph Business Trip Itinerary](./javascript/graph-business-trip/README.md)  
    
 
@@ -28,15 +44,21 @@
 #### Data Structures
 
 1). [Implementation: Linked List](./javascript/linked-list/README.md)  
-2). [Implementation: Stacks and Queues](./javascript/stacks-queues/README.md)  
-3). [Implementation: Binary Tree and Binary Search Tree](./javascript/trees/README.md)  
-4). [Implementation: Hash Table](./javascript/hash-table/README.md)       
+
+2). [Implementation: Stacks and Queues](./javascript/stacks-queues/README.md) 
+
+3). [Implementation: Binary Tree and Binary Search Tree](./javascript/trees/README.md) 
+
+4). [Implementation: Hash Table](./javascript/hash-table/README.md)   
+
 5). [Implementation: Graph](./javascript/graph/README.md) 
 
 #### Sorting
 
-1). [Implementation: Insertion Sort](./javascript/insert-sort/README.md)   
+1). [Implementation: Insertion Sort](./javascript/insert-sort/README.md) 
+
 2). [Implementation: Merge Sort](./javascript/merge-sort/README.md)   
+
 3). [Implementation: Quick Sort](./javascript/quick-sort/README.md)  
 
 ### Stretch Goal Assignments
