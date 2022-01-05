@@ -1,23 +1,54 @@
 # Data Structures and Algorithms
 
-See [setup instructions](https://codefellows.github.io/setup-guide/code-301/3-code-challenges), in the Code 301 Setup Guide.
+## Table of Contents
 
-## Repository Quick Tour and Usage
+### Javascript Challenges
 
-### 301 Code Challenges
+1). [Challenge: Reverse an Array](./javascript/array-reverse/README.md)  
+2). [Challenge: Insert and Shift an Array](./javascript/array-insert-shift/README.md)  
+3). [Challenge: Array Binary Search](./javascript/array-binary-search/README.md)  
+4). [Challenge: Linked List Insert, Includes, and To-String](./javascript/linked-list/README.md)    
+5). [Challenge: Linked List Kth From End](./javascript/linked-list/README.md)    
+6). [Challenge: Linked List Zipper](./javascript/linked-list/README.md)  
+7). [Challenge: Queue with Two Stacks](./javascript/stacks-queues/README.md)   
+8). [Challenge: Animal Shelter](./javascript/stacks-queues/README.md)  
+9). [Challenge: Find Max Value in Binary Tree](./javascript/trees/README.md) 
+10). [Challenge: Binary Tree Breadth-first Traversal](./javascript/trees/README.md)   
+11). [Challenge: FizzBuzz K-ary Tree](./javascript/trees/README.md)   
+12). [Challenge: Find First Repeated Word](./javascript/repeated-word/README.md)  
+13). [Challenge: Tree Intersection](./javascript/tree-intersection/README.md)   
+14). [Challenge: Hashmap Left Join](./javascript/left-join/README.md)  
+15). [Challenge: Graph Breadth-First Traversal](./javascript/graph/README.md)  
+16). [Challenge: Graph Depth-First Preorder Traversal](./javascript/graph/README.md)  
+17). [Challenge: Graph Business Trip Itinerary](./javascript/graph-business-trip/README.md)  
+   
 
-Under the `javascript` folder, at the top level, is a sub-folder called `code-challenges`
+### Implementations
 
-Each day, you'll add one new file to this folder to do your work for the day's assigned code challenge
+#### Data Structures
 
-If you have not already done so, run `npm install` from within this folder to setup your system to be able to run tests using `Jest`
+1). [Implementation: Linked List](./javascript/linked-list/README.md)  
+2). [Implementation: Stacks and Queues](./javascript/stacks-queues/README.md)  
+3). [Implementation: Binary Tree and Binary Search Tree](./javascript/trees/README.md)  
+4). [Implementation: Hash Table](./javascript/hash-table/README.md)       
+5). [Implementation: Graph](./javascript/graph/README.md) 
 
-To run your tests
+#### Sorting
 
-- Change to the `javascript` folder
-- run `npm test` to run all of the tests
-- run `npm test ##` to only run tests for challenge ## (i.e. 01)
+1). [Implementation: Insertion Sort](./javascript/insert-sort/README.md)   
+2). [Implementation: Merge Sort](./javascript/merge-sort/README.md)   
+3). [Implementation: Quick Sort](./javascript/quick-sort/README.md)  
 
-### 401 Data Structures, Code Challenges
+### Stretch Goal Assignments
 
-- Please follow the instructions specific to your 401 language, which can be found in the directory below, matching your course.
+1). [Implementation: Doubly Linked List](./javascript/doubly-linked-list/README.md)
+
+### Getting Started
+
+1). run `npm install` from within this folder to setup your system to run tests using `Jest`
+
+2). To run the tests
+
+  - Change to the `javascript` folder
+  - `npm test` to run all of the tests
+  - `npm test fileName` to only run a specific test suite
