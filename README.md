@@ -63,7 +63,10 @@
 
 ### Stretch Goal Assignments
 
-1). [Implementation: Doubly Linked List](./javascript/doubly-linked-list/README.md)
+1). [Reverse a Linked List](./javascript/reverse-linked-list/README.md)  
+2). [Implementation: Doubly Linked List](./javascript/doubly-linked-list/README.md)  
+
+
 
 ### Getting Started
 
