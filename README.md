@@ -63,9 +63,11 @@
 
 ### Stretch Goal Assignments
 
-1). [Reverse a Linked List](./javascript/reverse-linked-list/README.md)  
-2). [Implementation: Doubly Linked List](./javascript/doubly-linked-list/README.md)  
+1). [Challenge: Reverse a Linked List](./javascript/reverse-linked-list/README.md) 
 
+2). [Implementation: Doubly Linked List](./javascript/doubly-linked-list/README.md)   
+
+3). [Challenge: Find Deepest Node in a Binary Tree](./javascript/deepest-node-BT/README.md)
 
 
 ### Getting Started
