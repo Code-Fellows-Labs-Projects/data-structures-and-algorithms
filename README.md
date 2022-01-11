@@ -69,6 +69,8 @@
 
 3). [Challenge: Find Deepest Node in a Binary Tree](./javascript/deepest-node-BT/README.md)
 
+4). [Challenge: Determine if Vinary Tree is a Mirror](./javascript/mirror-binary-tree/README.md)
+
 
 ### Getting Started
 
