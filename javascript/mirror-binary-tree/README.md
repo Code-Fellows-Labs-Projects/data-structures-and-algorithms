@@ -51,10 +51,10 @@ Output: `boolean`
 ## Efficiency
 
 **time complexity: O(n)**
-Breadth first traversal, requires us to touch every node in the tree, making the time complexity O(n) where n is the number of nodes in the tree.
+Breadth first traversal requires us to touch every node in the tree, making the time complexity O(n) where n is the number of nodes in the tree.
  
-**Space complexity: O(n)**
-Breadth first traversal, requires us to store at least an entire level of the tree in the queue. Worst case, we may need to hold all the nodes in the queue, making the space complexity O(n) where n is the number of nodes in the tree.
+**space complexity: O(w)**
+Space complexity for breadth first traversal depends on the queue size. Breadth first traversal requires us to store at least an entire level of the tree in the queue at a time. Worst case scenario, the queue size will equal the max width of the tree, making the space complexity O(w) where w is the max width of the tree.
 
 
 ## Solution Code
