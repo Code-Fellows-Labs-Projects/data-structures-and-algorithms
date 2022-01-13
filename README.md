@@ -71,6 +71,8 @@
 
 4). [Challenge: Determine if Vinary Tree is a Mirror](./javascript/mirror-binary-tree/README.md)
 
+5). [Challenge: Find Leaves in a Binary Tree](./javascript/leaves-binary-tree/README.md)
+
 
 ### Getting Started
 
