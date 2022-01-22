@@ -73,6 +73,8 @@
 
 5). [Challenge: Find Leaves in a Binary Tree](./javascript/leaves-binary-tree/README.md)
 
+6). [Challenge: Convert Roman Numeral to Integer](./javascript/roman-numeral/README.md)
+
 
 ### Getting Started
 

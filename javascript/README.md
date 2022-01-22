@@ -71,5 +71,6 @@
 
 4). [Challenge: Determine if Binary Tree is a Mirror](./mirror-binary-tree/README.md)
 
-5). [Challenge: Find Leaves in a Binary Tree](./leaves-binary-tree/README.md)
+5). [Challenge: Find Leaves in a Binary Tree](./leaves-binary-tree/README.md)  
 
+6). [Challenge: Convert Roman Numeral to Integer](./roman-numeral/README.md)
