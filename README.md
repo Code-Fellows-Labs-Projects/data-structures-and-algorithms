@@ -75,6 +75,8 @@
 
 6). [Challenge: Convert Roman Numeral to Integer](./javascript/roman-numeral/README.md)
 
+7). [Challenge: Find the Height of a Binary Tree](./javascript/find-height-binary-tree/README.md)
+
 
 ### Getting Started
 
