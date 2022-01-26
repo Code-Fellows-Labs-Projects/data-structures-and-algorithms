@@ -74,3 +74,5 @@
 5). [Challenge: Find Leaves in a Binary Tree](./leaves-binary-tree/README.md)  
 
 6). [Challenge: Convert Roman Numeral to Integer](./roman-numeral/README.md)
+
+7). [Challenge: Find the Height of a Binary Tree](./find-height-binary-tree/README.md)
