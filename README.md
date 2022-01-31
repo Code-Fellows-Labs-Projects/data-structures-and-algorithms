@@ -77,6 +77,8 @@
 
 7). [Challenge: Find the Height of a Binary Tree](./javascript/find-height-binary-tree/README.md)
 
+8). [Challenge: Determine if a Binary Tree is Balanced](./javascript/balanced-binary-tree/README.md)
+
 
 ### Getting Started
 
