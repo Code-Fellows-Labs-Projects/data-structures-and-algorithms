@@ -76,3 +76,5 @@
 6). [Challenge: Convert Roman Numeral to Integer](./roman-numeral/README.md)
 
 7). [Challenge: Find the Height of a Binary Tree](./find-height-binary-tree/README.md)
+
+8). [Challenge: Determine if a Binary Tree is Balanced](./balanced-binary-tree/README.md)
