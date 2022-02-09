@@ -79,6 +79,7 @@
 
 8). [Challenge: Determine if a Binary Tree is Balanced](./javascript/balanced-binary-tree/README.md)
 
+9). [Challenge: Find the Closest Node in Binary Search Tree](./javascript/closest-node-bst/README.md)
 
 ### Getting Started
 
