@@ -80,3 +80,6 @@
 8). [Challenge: Determine if a Binary Tree is Balanced](./balanced-binary-tree/README.md)
 
 9). [Challenge: Find the Closest Node in Binary Search Tree](./closest-node-bst/README.md)
+
+10). [Challenge: Palindrome Linked List](./palindrome-linked-list/README.md)
+
