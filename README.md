@@ -81,6 +81,8 @@
 
 9). [Challenge: Find the Closest Node in Binary Search Tree](./javascript/closest-node-bst/README.md)
 
+10). [Challenge: Palindrome Linked List](./javascript/palindrome-linked-list/README.md)
+
 ### Getting Started
 
 1). run `npm install` from within this folder to setup your system to run tests using `Jest`
