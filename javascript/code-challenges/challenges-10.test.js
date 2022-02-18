@@ -230,7 +230,15 @@ const weeklyTemperatures = [
 ];
 
 const averageDailyTemperature = (weather) => {
-  // Solution code here...
+  let dayCount = 0;
+  let totalSum = 0;
+  for (let i = 0; i < weather.length; i++) {
+    for (let j = 0; j < weather[i].length; j++){
+      dayCount++;
+      totalSum += weather[i][j];
+    }
+  }
+  return totalSum/dayCount;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -251,7 +259,20 @@ let lowestWeeklyTemperatureData = [
 ];
 
 const lowestWeeklyAverage = (weather) => {
-  // Solution code here...
+  let lowestAverage = Number.MAX_VALUE;
+
+  for (let i = 0; i < weather.length; i++){
+    let weeklySum = 0;
+    for (let j = 0; j < weather[i].length; j++){
+      weeklySum += weather[i][j];
+    }
+
+    let weeklyAverage = weeklySum / 7;
+    if ( weeklyAverage < lowestAverage){
+      lowestAverage = weeklyAverage;
+    }
+  }
+  return lowestAverage;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -267,7 +288,21 @@ For example, excel('1,1,1\n4,4,4\n9,9,9') returns [3, 12, 27].
 ------------------------------------------------------------------------------------------------ */
 
 const excel = (str) => {
-  // Solution code here...
+  const rowSumArray = [];
+  const rows = str.split('\n');
+
+  for ( let i = 0; i < rows.length; i ++){
+    let rowSum = 0;
+    const column = rows[i].split(',');
+
+    for ( let j = 0; j < column.length; j++){
+      rowSum += parseInt(column[j]);
+    }
+
+    rowSumArray.push(rowSum);
+  }
+
+  return rowSumArray;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -366,20 +401,20 @@ describe('Testing challenge 8', () => {
   });
 });
 
-xdescribe('Testing challenge 9', () => {
+describe('Testing challenge 9', () => {
   test('It should calculate and return the average temperature of the data set', () => {
     expect(averageDailyTemperature(weeklyTemperatures)).toStrictEqual(60.25);
   });
 });
 
-xdescribe('Testing challenge 10', () => {
+describe('Testing challenge 10', () => {
   test('It should return the lowest weekly average temperature within the data set', () => {
     expect(lowestWeeklyAverage(weeklyTemperatures)).toStrictEqual(57);
     expect(lowestWeeklyAverage(lowestWeeklyTemperatureData)).toStrictEqual(46);
   });
 });
 
-xdescribe('Testing challenge 11', () => {
+describe('Testing challenge 11', () => {
   test('It should return the total count for each row', () => {
     let result = excel('1,1,1\n4,4,4\n9,9,9');
     expect(result.length).toStrictEqual(3);
