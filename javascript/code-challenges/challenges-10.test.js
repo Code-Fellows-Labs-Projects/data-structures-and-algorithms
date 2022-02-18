@@ -158,13 +158,15 @@ const errands = [
 
 // Justin Hamerly helped with this.
 const howManyTreats = (arr) => {
-  for (let i = 0; i < arr.length; i++){
-    for (let j = 0; j <arr[i].items.length; j++){
-      if (arr[i].items[j].name === 'Treats'){
-        return arr[i].items[j].quantity;
-      }
-    }
-  }
+  // for (let i = 0; i < arr.length; i++){
+  //   for (let j = 0; j <arr[i].items.length; j++){
+  //     if (arr[i].items[j].name === 'Treats'){
+  //       return arr[i].items[j].quantity;
+  //     }
+  //   }
+  // }
+  ///REFACTORED
+  return arr[2].items[1].quantity;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -186,7 +188,10 @@ The top row of the board is considered row zero and row numbers increase as they
 ------------------------------------------------------------------------------------------------ */
 
 const battleship = (board, row, col) => {
-  //  Solution code here...
+  if (board[row][col] === '#') {
+    return 'hit';
+  }
+  return 'miss';
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -198,7 +203,14 @@ For example, the following input returns a product of 720: [[1,2], [3,4], [5,6]]
 ------------------------------------------------------------------------------------------------ */
 
 const calculateProduct = (numbers) => {
-  // Solution code here...
+  let product = 1;
+
+  for (let i = 0; i < numbers.length; i++) {
+    for (let j = 0; j < numbers[i].length; j++) {
+      product *= numbers[i][j];
+    }
+  }
+  return product;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -322,7 +334,7 @@ describe('Testing challenge 6', () => {
   });
 });
 
-xdescribe('Testing challenge 7', () => {
+describe('Testing challenge 7', () => {
   const battleshipData = [
     ['#', ' ', '#', ' '],
     ['#', ' ', '#', ' '],
@@ -341,7 +353,7 @@ xdescribe('Testing challenge 7', () => {
   });
 });
 
-xdescribe('Testing challenge 8', () => {
+describe('Testing challenge 8', () => {
   test('It should multiply all the numbers together', () => {
     expect(calculateProduct([[1, 2], [3, 4], [5, 6]])).toStrictEqual(720);
   });
